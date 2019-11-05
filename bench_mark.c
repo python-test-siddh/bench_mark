@@ -27,7 +27,7 @@ static struct PyModuleDef fputsmodule = {
     "benchmark",
     "Python interface for the fputs C library function",
     -1,
-    FputsMethods
+    FooMethods
 };
 
 
