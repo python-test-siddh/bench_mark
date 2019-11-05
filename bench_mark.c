@@ -33,6 +33,6 @@ static struct PyModuleDef foo_bar_module = {
 
 
 
-PyMODINIT_FUNC PyInit_fputs(void) {
+PyMODINIT_FUNC PyInit_benchmark(void) {
     return PyModule_Create(&foo_bar_module);
 }
