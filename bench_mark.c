@@ -34,5 +34,5 @@ static struct PyModuleDef fputsmodule = {
 
 
 PyMODINIT_FUNC PyInit_fputs(void) {
-    return PyModule_Create(&foo_bar);
+    return PyModule_Create(foo_bar);
 }
