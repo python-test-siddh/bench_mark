@@ -1,13 +1,6 @@
 #include <Python.h>
 #include <stdio.h>
 
-static PyObject *foo_bar(PyObject *self, PyObject *args);
-
-
-static PyMethodDef FooMethods[] = {
-{"calc",  foo_bar, METH_VARARGS},
-{NULL, NULL}  /* Sentinel */
-};
 
 static PyObject *foo_bar(PyObject *self, PyObject *args)
 {
@@ -22,7 +15,14 @@ return Py_BuildValue("L", a+b);
 }
 
 
-static struct PyModuleDef foo_bar = {
+
+
+static PyMethodDef FooMethods[] = {
+{"calc",  foo_bar, METH_VARARGS},
+{NULL, NULL}  /* Sentinel */
+};
+
+static struct PyModuleDef foo_bar_module = {
     PyModuleDef_HEAD_INIT,
     "benchmark",
     "Python interface for the fputs C library function",
@@ -34,5 +34,5 @@ static struct PyModuleDef foo_bar = {
 
 
 PyMODINIT_FUNC PyInit_fputs(void) {
-    return PyModule_Create(foo_bar);
+    return PyModule_Create(&foo_bar_module);
 }
