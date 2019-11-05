@@ -22,7 +22,7 @@ return Py_BuildValue("L", a+b);
 }
 
 
-static struct PyModuleDef benchmark = {
+static struct PyModuleDef foo_bar = {
     PyModuleDef_HEAD_INIT,
     "benchmark",
     "Python interface for the fputs C library function",
@@ -34,5 +34,5 @@ static struct PyModuleDef benchmark = {
 
 
 PyMODINIT_FUNC PyInit_fputs(void) {
-    return PyModule_Create(benchmrk);
+    return PyModule_Create(foo_bar);
 }
