@@ -20,3 +20,19 @@ b = (a * b * b)%c;
 }
 return Py_BuildValue("L", a+b);
 }
+
+
+static struct PyModuleDef fputsmodule = {
+    PyModuleDef_HEAD_INIT,
+    "benchmark",
+    "Python interface for the fputs C library function",
+    -1,
+    FputsMethods
+};
+
+
+
+
+PyMODINIT_FUNC PyInit_fputs(void) {
+    return PyModule_Create(&foo_bar);
+}
